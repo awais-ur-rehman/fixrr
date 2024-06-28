@@ -131,53 +131,56 @@ class _ChatPartnersState extends State<ChatPartners> {
                     physics: const AlwaysScrollableScrollPhysics(),
                     itemBuilder: (context, index) {
                       String chatPartner = snapshot.data![index];
-                      return Card(
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 10.0, vertical: 10.0),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Row(
-                                children: [
-                                  TextWidget(
-                                    input: 'User:',
-                                    fontsize: 20,
-                                    fontWeight: FontWeight.w300,
-                                    textcolor: AppColors.black,
-                                  ),
-                                  const SizedBox(
-                                    width: 8.0,
-                                  ),
-                                  TextWidget(
-                                    input: chatPartner,
-                                    fontsize: 20,
-                                    fontWeight: FontWeight.w300,
-                                    textcolor: AppColors.black,
-                                  ),
-                                ],
-                              ),
-                              InkWell(
-                                onTap: () {
-                                  _showLanguageSelectionDialog(chatPartner);
-                                },
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.end,
-                                  children: <Widget>[
+                      return Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: Card(
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 10.0, vertical: 10.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  children: [
                                     TextWidget(
-                                      input: 'Message',
-                                      fontsize: 17,
+                                      input: 'User:',
+                                      fontsize: 20,
                                       fontWeight: FontWeight.w300,
-                                      textcolor: AppColors.secondaryColor,
+                                      textcolor: AppColors.black,
                                     ),
-                                    const Icon(
-                                      Icons.arrow_forward_outlined,
-                                      color: AppColors.secondaryColor,
-                                    )
+                                    const SizedBox(
+                                      width: 8.0,
+                                    ),
+                                    TextWidget(
+                                      input: chatPartner,
+                                      fontsize: 20,
+                                      fontWeight: FontWeight.w300,
+                                      textcolor: AppColors.black,
+                                    ),
                                   ],
                                 ),
-                              ),
-                            ],
+                                InkWell(
+                                  onTap: () {
+                                    _showLanguageSelectionDialog(chatPartner);
+                                  },
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    children: <Widget>[
+                                      TextWidget(
+                                        input: 'Message',
+                                        fontsize: 17,
+                                        fontWeight: FontWeight.w300,
+                                        textcolor: AppColors.secondaryColor,
+                                      ),
+                                      const Icon(
+                                        Icons.arrow_forward_outlined,
+                                        color: AppColors.secondaryColor,
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       );

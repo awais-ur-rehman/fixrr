@@ -678,7 +678,7 @@ class JobState extends State<PostJob> {
         dynamic jobDetails=body["job"];
 
         print(jobDetails);
-        dynamic jobName = jobDetails["job_name"];
+        dynamic jobID = jobDetails["id"];
         setState(() {
           isLoading = false; // Show loader
         });
@@ -687,7 +687,7 @@ class JobState extends State<PostJob> {
           context,
           MaterialPageRoute(
             builder: (context) =>
-            MatchList(jobName:jobName,),
+            MatchList(jobID:jobID,),
           ),
         );
        // Navigator.pushNamed(context, Constants.matchFinderScreen);
